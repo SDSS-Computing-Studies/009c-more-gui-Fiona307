@@ -15,6 +15,7 @@ b_e = tk.Entry(win, width=10)
 c_e = tk.Entry(win, width=10)
 h_e = tk.Entry(win, width=10)
 
+output = StringVar()
 instruction = "Enter in as much information about the\ntriangle shown and I will calculate the area"
 e1 = tk.Entry(win, textvariable=instruction)
 
