@@ -28,6 +28,7 @@ def calculate():
     if h == None:
         s = (float(a)+float(b)+float(c))/2
         area = math.sqrt(s*(s-float(a))*(s-float(b))*(s-float(c)))
+        answer = 
         e1.delete(0,END)
         e1.insert(0,answer)
 
