@@ -11,10 +11,10 @@ import math
 trianglepic = PhotoImage(file="triangle.png")
 l1 = tk.Label(win, image=trianglepic)
 
-a_e = tk.Entry(win, width=10)
-b_e = tk.Entry(win, width=10)
-c_e = tk.Entry(win, width=10)
-h_e = tk.Entry(win, width=10)
+a_e = tk.Entry(win, width=5)
+b_e = tk.Entry(win, width=5)
+c_e = tk.Entry(win, width=5)
+h_e = tk.Entry(win, width=5)
 
 output = StringVar()
 instruction = "Enter in as much information about the triangle shown and I will calculate the area"
