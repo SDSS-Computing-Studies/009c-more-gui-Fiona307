@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import*
 
 win = tk.Tk()
+win.geometry("500x400")
 
 import math
 
@@ -16,24 +17,44 @@ c_e = tk.Entry(win, width=10)
 h_e = tk.Entry(win, width=10)
 
 output = StringVar()
-instruction = "Enter in as much information about the\ntriangle shown and I will calculate the area"
+instruction = "Enter in as much information about the triangle shown and I will calculate the area"
 output.set(instruction)
-e1 = tk.Entry(win, textvariable=output)
+e1 = tk.Entry(win, textvariable=output, width=len(instruction))
 
 def calculate():
     a = a_e.get()
     b = b_e.get()
     c = c_e.get()
     h = h_e.get()
-    if h == None:
-        s = (float(a)+float(b)+float(c))/2
-        area = math.sqrt(s*(s-float(a))*(s-float(b))*(s-float(c)))
-        answer = 
-        e1.delete(0,END)
-        e1.insert(0,answer)
+    if h != "":
+        if b != "":
+            area = float(b)*float(h)/2
+            A = str(area)
+            output.set("The area of the triangle is: " + A)
+        elif a != "" and c != "":
+            b = math.sqrt(float(a)**2-float(h)**2) + math.sqrt(float(c)**2-float(h)**2)
+            area = float(b)*float(h)/2
+            A = str(area)
+            output.set("The area of the triangle is: " + A)
+        else:
+            output.set("The area cannot be calculated from the information given\nPlease try again")
+    else:
+        if a != "" and b != "" and c != "":
+            s = (float(a)+float(b)+float(c))/2
+            area = math.sqrt(s*(s-float(a))*(s-float(b))*(s-float(c)))
+            A = str(area)
+            output.set("The area of the triangle is: " + A)
+        else:
+            output.set("The area cannot be calculated from the information given. Please try again")
 
+b1 = tk.Button(win, text="Calculate!", command=calculate)
 
-b1 = tk.Button(win, text="Calculate!")
-
+l1.place(x=0,y=0)
+e1.place(x=0,y=300)
+b1.place(x=300,y=350)
+a_e.place(x=100,y=150)
+h_e.place(x=300,y=150)
+c_e.place(x=400,y=150)
+b_e.place(x=300,y=250)
 
 win.mainloop()
